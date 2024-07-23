@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  transition: opacity 300ms ease;
+  font-weight: 700;
+}
+
+h1 {
+  line-height: 1.25;
+}
+
+img {
+  width: 100%;
+}
+
+.bold-500 {
+  font-weight: 600;
+}
+
+.link__hover-effect--white:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.link__hover-effect--white::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  bottom: -3px;
+  right: 0;
+  background-color: #fff;
+  transition: all 300ms ease;
+}
+
+/* 
+
+NAVBAR
+
+*/
+
+nav {
+  color: #fff;
+  position: relative;
+ 
+}
+
+.overlay {
+  background-image: url(./assets/theater.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 25, 71, 0.83);
+}
+
+.nav__container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 24px 24px 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.nav__link {
+  margin-left: 64px;
+}
+
+.nav__btn {
+  background-color: #fff;
+  color: #6030b1;
+  padding: 12px 40px;
+  border: 2px #5d3eff;
+  border-radius: 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all .35s ease;
+}
+
+.nav__btn:hover {
+  background-color: #ff328f;
+  color: #fff;
+}
+
+.nav__header {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav__title {
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-size: 45px;
+  margin-bottom: 40px;
+}
+
+.input__wrapper {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+input {
+  color: rgba(0, 0, 0, 0.87);
+  width: 100%;
+  max-width: 800px;
+  height: 60px;
+  font-size: 20px;
+  padding-left: 20px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+
+.search__img--wrapper {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 12px 16px 8px 0;
+  color: #6030b1;
+  transition: all .2s ease;
+}
+
+.search__img--wrapper:hover {
+  color: #ff328f;
+}
+
+/* 
+
+SEARCH
+
+*/
+
+#search {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movies__header {
+  padding: 0 20px;
+}
+
+.movies__header--title {
+  padding: 20px 0;
+  font-size: 28px;
+}
+
+.movies {
+  padding-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  width: 25%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie:hover .movie__img {
+  transform: scale(1.03);
+}
+
+.movie__img--wrapper {
+  margin-bottom: 12px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.movie__img {
+  max-height: 380px;
+  cursor: not-allowed;
+  transition: all 300ms ease;
+  object-fit: contain;
+  object-position: left;
+}
+
+.movie__title {
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.movie__title:hover {
+  text-decoration: underline;
+  cursor: not-allowed;
+}
+
+.movie__year,
+.movie__type {
+  font-size: 16px;
+}
+
+.movie__year {
+  margin-bottom: 8px;
+}
