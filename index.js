@@ -19,7 +19,6 @@ function onChangeSearch(event) {
 
   searchResult.innerHTML = `Search results for "${searchParam}"`;
 
-  moviesListEl.innerHTML = "";
   moviesListEl.innerHTML =
     '<i class="fas fa-spinner movies__loading--spinner"></i>';
   moviesListEl.classList.add("movies__loading");
