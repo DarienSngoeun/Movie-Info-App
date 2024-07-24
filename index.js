@@ -2,7 +2,7 @@ const moviesListEl = document.querySelector(".movies");
 const searchResult = document.querySelector(".movies__header--title");
 
 function openMenu() {
-  document.body.classList += " menu--open";
+  document.body.classList.add("menu--open");
 }
 
 function closeMenu() {
@@ -10,26 +10,36 @@ function closeMenu() {
 }
 
 function searchBTN() {
-  onChangeSearch();
+  const input = document.querySelector('input[type="text"]');
+  onChangeSearch({ target: { value: input.value } });
 }
 
-async function onChangeSearch(event) {
+function onChangeSearch(event) {
   searchParam = event.target.value;
 
   searchResult.innerHTML = `Search results for "${searchParam}"`;
 
-  const movies = await fetch(
-    `https://www.omdbapi.com/?apikey=ee5c400d&s=${searchParam}`
-  );
-  const moviesData = await movies.json();
+  moviesListEl.innerHTML = "";
+  moviesListEl.innerHTML =
+    '<i class="fas fa-spinner movies__loading--spinner"></i>';
+  moviesListEl.classList.add("movies__loading");
 
-  if (moviesData.Search) {
-    moviesListEl.innerHTML = moviesData.Search.map((movie) =>
-      movieHTML(movie)
-    ).join("");
-  } else {
-    moviesListEl.innerHTML = "No movies found.";
-  }
+  setTimeout(async () => {
+    const response = await fetch(
+      `https://www.omdbapi.com/?apikey=ee5c400d&s=${searchParam}`
+    );
+    const moviesData = await response.json();
+
+    moviesListEl.classList.remove("movies__loading");
+
+    if (moviesData.Search) {
+      moviesListEl.innerHTML = moviesData.Search.map((movie) =>
+        movieHTML(movie)
+      ).join("");
+    } else {
+      moviesListEl.innerHTML = "No movies found.";
+    }
+  }, 1000);
 }
 
 function movieHTML(movie) {

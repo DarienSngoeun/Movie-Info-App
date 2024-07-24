@@ -274,6 +274,37 @@ SEARCH
   margin-bottom: 8px;
 }
 
+.movies__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 60px;
+  color: rgb(96, 48, 177);
+}
+
+.movies__loading--spinner {
+  visibility: hidden;
+}
+
+.movies__loading .movies__loading--spinner {
+  visibility: visible;
+}
+
+.fa-spinner {
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
 @media (max-width: 768px) {
   .header__description {
