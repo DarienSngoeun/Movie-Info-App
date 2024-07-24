@@ -93,6 +93,7 @@ nav {
   font-size: 14px;
   text-transform: uppercase;
   transition: all 0.35s ease;
+  cursor: not-allowed;
 }
 
 .nav__btn:hover {
@@ -141,7 +142,6 @@ nav {
   visibility: visible !important;
   transform: translate(0);
   opacity: 1;
-
 }
 
 .menu__links {
@@ -157,7 +157,7 @@ nav {
 }
 
 .nav__header {
-  margin-top: 40px;
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,7 +176,7 @@ nav {
   max-width: 600px;
   position: relative;
   overflow: hidden;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 input {
@@ -218,10 +218,6 @@ SEARCH
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.movies__header {
-  padding: 0 20px;
 }
 
 .movies__header--title {
