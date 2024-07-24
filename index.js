@@ -32,9 +32,11 @@ function onChangeSearch(event) {
     moviesListEl.classList.remove("movies__loading");
 
     if (moviesData.Search) {
-      moviesListEl.innerHTML = moviesData.Search.map((movie) =>
-        movieHTML(movie)
-      ).join("");
+      const firstSixMovies = moviesData.Search.slice(0, 6);
+
+      moviesListEl.innerHTML = firstSixMovies
+        .map((movie) => movieHTML(movie))
+        .join("");
     } else {
       moviesListEl.innerHTML = "No movies found.";
     }
